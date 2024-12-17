@@ -1,4 +1,4 @@
- pipeline {
+pipeline {
     agent any
     
     environment {
@@ -20,14 +20,15 @@
 
         stage('Run Unit Tests') {
             steps {
-                sh 'npm test'
+                bat 'npm test'
             }
         }
 
         stage('Build') {
             steps {
                 echo 'Building the application...'
-                // Tambahkan perintah build jika diperlukan
+                // Tambahkan perintah build jika diperlukan, misalnya:
+                // bat 'npm run build'
             }
         }
 
@@ -46,4 +47,4 @@
             echo 'Pipeline failed!'
         }
     }
- }
+}
